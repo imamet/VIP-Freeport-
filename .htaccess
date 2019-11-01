@@ -1,0 +1,9 @@
+<IfModule mod_rewrite.c>
+RewriteEngine on
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}.php -f
+RewriteCond %{REQUEST_FILENAME}index -f
+RewriteRule ^(.*)$ $1.php
+RewriteRule ^([a-zA-Z0-9_-]+)$ index.php?pa=$1
+Options All -Indexes
+</IfModule>
